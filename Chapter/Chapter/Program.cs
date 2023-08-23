@@ -1,4 +1,5 @@
 using Chapter.Contexts;
+using Chapter.Interfaces;
 using Chapter.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ChapterContext, ChapterContext>();
 builder.Services.AddTransient<LivroRepository, LivroRepository>();
+builder.Services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
 var app = builder.Build();
 
